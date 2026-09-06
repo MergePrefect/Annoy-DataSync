@@ -1,5 +1,4 @@
 
-
 # Annoy: This should be a paper Title
 
 <p align="center">
@@ -45,6 +44,13 @@ Annoy-DataSync is a novel approach that transforms code-based reasoning patterns
 
 Due to our collaborators' compliance requirements, we only release the PythonEdu-Rs subset of the Annoy(++) dataset.
 
+### Dataset Licenses
+We do not invent a new dataset license. Following the provenance described in the dataset cards, the released datasets reuse the license metadata from their direct data sources or the synthesis model used for generating the processed responses:
+
+| Dataset | License lineage | License |
+|-|-|-|
+| `Annoy-PyEdu-Rs-Raw` | Directly adopted from the `python-edu` subset of [`HuggingFaceTB/smollm-corpus`](https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus), whose dataset metadata records `license: odc-by`. | `odc-by` |
+| `Annoy-PyEdu-Rs` | The dataset card states its responses are synthesized with [`DeepSeek-V2.5`](https://huggingface.co/deepseek-ai/DeepSeek-V2.5), whose model-card metadata records `license: other` / `license_name: deepseek`. | `other` (`license_name: deepseek`) |
 
 
 #### Models
@@ -170,7 +176,7 @@ data/spec_1k_gens_verified.jsonl \
 python \
 ./temp/temp/temp
 ```
-In the bash script we run the verification for several times to try our best avoid the runtime effect brought by multi-processing execution (e.g. timeout). This is helpful for large scale verification. You can change the number of process to match your machine (e.g. more if you have a large number of CPUs and a large memory).
+In the bash script we run the verification for several times to try our best avoid the runtime effect brought by multi-processing execution (e.g. timeout). This is helpful for large scale verification. You can change the number of process to match your machine (e.g. more if you have a large number of CPUs and want faster verification).
 
 #### Step 6: Second Turn - Revision and Re-verification
 ##### Step 6.1: Build Multi-turn Messages
@@ -213,4 +219,4 @@ By doing so, you can get data `data/spec_demo_final.jsonl` with the same format 
 You can use any popular training framework to train your model like [llama-factory](https://github.com/hiyouga/LLaMA-Factory). 
 
 ## Acknowledgement
-We thank Koala NN, TCLV and OMEN for their valuable feedback and suggestions! 🤗🤗🤗
+We thank Koala NN, TCLV and OMEN for their valuable feedback and suggestions! 🤝🤝🤝
